@@ -1,0 +1,18 @@
+#Template used from http://www.ccs.neu.edu/home/ntuck/courses/2018/09/cs4550/notes/00-spring/01-intro/notes.html by Prof.Nat Tuck
+server {
+        listen 80;
+        listen [::]:80;
+
+        root /home/anubhav/www/hw01/;
+
+        index index.html;
+
+        server_name hw01.pyxis.blue;
+
+        location / {
+                # First attempt to serve request as file, then
+                # as directory, then fall back to displaying a 404.
+                try_files $uri $uri/ =404;
+        }
+}
+
